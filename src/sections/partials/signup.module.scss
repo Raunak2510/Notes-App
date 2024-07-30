@@ -1,0 +1,47 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    margin-left: -40px;
+    gap: 10px; 
+    margin-top: 110px;
+  
+    .googlebutton {
+      background-color: rgb(176, 63, 63);
+      color: white;
+    }
+  
+    .signupbutton {
+      background-color: green;
+      color: white;
+    }
+  
+    .svg {
+      width: 18px;
+      height: 18px;
+    }
+  
+    .text1 {
+      display: flex;
+      flex-direction: row;
+      margin-left: 100px;
+      margin-top: 60px;
+    }
+  
+    .text2 {
+      display: flex;
+      flex-direction: column;
+      gap: 5px; 
+    }
+  
+    .img {
+      width: 45px;
+      height: 50px;
+    }
+  }
+  
+  @media screen and (min-width: 1281px) {
+    .section .text2 {
+      gap: 25px;
+    }
+  }
+  
