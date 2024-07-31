@@ -1,0 +1,121 @@
+.section2{
+    display: flex;
+    flex-direction: row;
+   
+}
+
+.section1{
+    .card1{
+        display: flex;
+       flex-direction: column;
+       
+      // margin-left: 10px;
+      
+       .svg{
+        color: rgb(231, 185, 100);
+      }
+      .span{
+        font-size: 25px;
+    }
+  
+    }
+    .card2{
+        display: flex;
+        gap: 15px;
+       
+       flex-direction: column;
+       
+       margin-left: 20vw;
+     
+    }
+    
+}
+
+.section3{
+   
+    display: flex;
+    flex-direction: column;
+    margin-top: -90vh;
+    gap: 30px;
+}
+
+//Mobile First View
+@media screen and (min-width: 641px) {
+    .section1{
+      
+        .card1{
+            margin-left: -45vw;
+        }
+         .card2{
+            flex-direction: row;
+            margin-left: 12vw;
+         }
+    }
+    .section3{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        .card2{
+            gap: 30px;
+        }
+    }
+  .section3{
+    //margin-top: -8vh;
+    margin-top: -90vh;
+   
+  }
+   
+}
+
+
+@media screen and (min-width: 961px) {
+    .section1{
+          .card2{
+           flex-direction: row;
+          margin-left: 15vw;
+           gap: 50px;
+        }
+   }
+   .section3{
+    margin-top: -91vh;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+   }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .section3{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+
+@media screen and (min-width: 1281px) { 
+    .section3{
+        .card2{
+      margin-left: 18vw;
+        }
+}
+}
+
+@media screen and (min-width: 1500px) { 
+    .section3{
+        .card1{
+           
+        }
+    }
+}
+
+
+@media screen and (min-width: 2000px) {
+    .section3{
+        .card1{
+            margin-left: -1400px;
+        }
+    }
+ }

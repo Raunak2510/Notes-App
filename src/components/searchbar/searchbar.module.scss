@@ -1,0 +1,69 @@
+.bar input{
+    height: 3vh;
+    width: 50vw;
+}
+.bar{
+    display:flex;
+    flex-direction: row;
+    margin-top: 3vh;
+    margin-left: 4vw;
+    justify-content: center;
+
+    .svg{
+        height: 25px;
+        width: 25px;
+    }
+}
+
+//Mobile First View
+@media screen and (min-width: 641px) {
+    .bar input{
+        width: 50vw;
+        height: 3vh;
+    }
+    .bar{
+        margin-left: 10vw;
+
+        .svg{
+            height: 3vh;
+            width: 3vh;
+        }
+    }
+}
+
+
+@media screen and (min-width: 961px) {
+    .bar input{
+        width: 650px;
+        height: 30px;
+    }
+    .bar{
+        margin-left: 35px;
+
+        .svg{
+            height: 35px;
+            width: 35px;
+        }
+    }
+}
+
+
+@media screen and (min-width: 1024px) {}
+
+
+@media screen and (min-width: 1281px) {
+    .bar{
+        margin-left: 90px;
+    }
+    
+ }
+
+
+@media screen and (min-width: 1500px) {
+   .bar{
+    margin-left: 8vw;
+   }
+ }
+
+
+@media screen and (min-width: 2000px) { }

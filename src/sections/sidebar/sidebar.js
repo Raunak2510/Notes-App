@@ -9,15 +9,15 @@ import styles from "./sidebar.module.scss";
 
 
 function SideBar(){
-    const brandLight= images[0];
+    const brandLight= images[1];
     return(
         <section className={styles.section}>
           <img  src={brandLight} alt={"brand-img"} className={styles.img}/>
           <article className={styles.article}>
-            <CiHome />
-            <FaPlus />
+            <CiHome className={styles.svg}/>
+            <FaPlus className={styles.svg}/>
           </article>
-          <MdLogout />
+          <MdLogout className={styles.svg}/>
         </section>
     )
 }
