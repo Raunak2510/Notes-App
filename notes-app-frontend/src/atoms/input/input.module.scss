@@ -1,0 +1,49 @@
+.box{
+    display: flex;
+    gap: 0px;
+    flex-direction: column;
+   
+    width: 300px;
+    margin-left: 90px;
+    
+    justify-content: center;
+    
+    
+}
+
+.box input{
+    height: 15px;
+    padding: 5px;
+
+}
+
+@media  screen and (min-width: 641px) {
+    .box input{
+        height: 15px;
+        padding: 5px;
+    
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .box input {
+       
+        height: 15px;
+        padding: 5px;
+
+    }
+ }
+
+@media screen and (min-width: 1281px) {
+    .box input {
+        height: 20px;
+        padding: 15px;
+        width: 315px;
+        
+      }
+      .box{
+        gap: 3px;
+      }
+ }
+
+ 

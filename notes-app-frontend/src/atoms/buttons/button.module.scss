@@ -1,0 +1,46 @@
+.button{
+    display: flex;
+    margin: 20px 0px;
+    width: 300px;
+    height: 30px;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    cursor: pointer;
+    gap: 10px;
+    border-radius: 8px;
+    margin-left: 90px;
+    svg{
+        width: 24px;
+        height: 24px;
+    }
+
+    h3{
+        font-size: 300;
+    }
+}
+
+    //Mobile First View
+@media screen and (min-width: 641px) {}
+
+
+@media screen and (min-width: 961px) {}
+
+
+@media screen and (min-width: 1024px) {}
+
+
+@media screen and (min-width: 1281px) {
+    .button{
+        height: 40px;
+        width: 350px;
+        padding: 30px;
+        }
+ }
+
+
+@media screen and (min-width: 1500px) { }
+
+
+@media screen and (min-width: 2000px) { }
