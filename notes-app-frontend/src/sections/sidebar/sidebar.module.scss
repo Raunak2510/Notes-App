@@ -1,3 +1,5 @@
+
+    
 .section{
     display: flex;;
     flex-direction: column;
@@ -21,7 +23,11 @@
         width: 50px;
         color: white;
     }
+    .button{
+        background-color: rgb(42, 40, 40);
+    }
 }
+
 
 //Mobile First View
 @media screen and (min-width: 641px) {

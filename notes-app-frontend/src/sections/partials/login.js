@@ -8,11 +8,14 @@ import Input from "../../atoms/input/input";
 
 import styles from "./signup.module.scss";
 import { IoLogoGoogle } from "react-icons/io";
+import MainPage from "../../pages/mainpage/mainpage";
+import FirstPageRoute from "../../pages/firstpage/firstpage_router.js";
 
 function SignIn() {
   const BrandLight = images[0];
   const [email, setEmail]= useState("");
   const [password, setPassword] = useState("");
+  const [status, setStatus] = useState("");
 
   const sigInUrl="http://localhost:8000/api/users/login";
 
@@ -21,12 +24,27 @@ function SignIn() {
         email:email,
         password:password
         
-    });
-     console.log(email);
+    })
+     .then((response)=>{
+      setStatus("Login Sucess");
+      console.log(response.data);
+     })
+     .catch((error)=>{
+        setStatus("Login Failed");
+        console.log(error);
+     })
   }
-
+  if(status==="Login Sucess"){
+    return (
+      <MainPage />
+    )
+  } else{
   return (
     <section className={styles.section}>
+      <article className={styles.component1}>
+    <FirstPageRoute />
+    </article>
+    <article className={styles.component2}>
       <article className={styles.text1}>
         <img src={BrandLight} alt={"img"} className={styles.img} />
         <h2>NOTE.me</h2>
@@ -51,12 +69,15 @@ function SignIn() {
         className={styles.signupbutton}
         handleClick={userLogin}
          />
-        <p>
+         {/* {status==="Login Sucess" && <Link to="/main"><MainPage /></Link>} */}
+        <p className={styles.p}>
           Don't have an account? <Link to="/signup">Sign Up</Link>
         </p>
       </article>
+      </article>
     </section>
   );
+}
 }
 
 export default SignIn;

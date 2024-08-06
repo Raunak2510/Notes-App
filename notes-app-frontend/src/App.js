@@ -3,13 +3,11 @@ import './App.css';
 
 
 import MainPage from './pages/mainpage/mainpage';
-import Page from './pages/page.js';
-
-
+import FirstPage from './pages/firstpage/first';
 function App() {
   return (
     <div className="App">
-  <Page />
+  <FirstPage />
     </div>
   );
 }

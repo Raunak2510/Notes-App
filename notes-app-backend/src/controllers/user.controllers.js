@@ -1,3 +1,7 @@
+
+const jwt = require("jsonwebtoken");
+
+
 const User = require("../models/user.models.js");
 const asyncHandler = require("../utils/asynchandler.js");
 
@@ -40,6 +44,12 @@ const loginUser= asyncHandler(async(req, res)=>{
      if(!isPassword){
         return res.status(400).send("invalid password");
      } 
+
+     const token = jwt.sign({ user: user._id }, process.env.SECRET, {
+        expiresIn: "1d",
+      });
+  
+      res.status(201).json({ success: 200, token });
      console.log("user login");
      return res.status(200).send("User Login");
 })
