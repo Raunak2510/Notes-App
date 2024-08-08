@@ -16,16 +16,24 @@ function SignIn() {
   const [email, setEmail]= useState("");
   const [password, setPassword] = useState("");
   const [status, setStatus] = useState("");
+  const [userName, setUserName]= useState("");
 
   const sigInUrl="http://localhost:8000/api/users/login";
 
   function userLogin(){
+
+    
     axios.post(sigInUrl, {
         email:email,
         password:password
         
     })
      .then((response)=>{
+      const data = response.data;
+      localStorage.setItem('token',data.token );
+      setUserName(data.email);
+    
+      
       setStatus("Login Sucess");
       console.log(response.data);
      })
@@ -36,7 +44,7 @@ function SignIn() {
   }
   if(status==="Login Sucess"){
     return (
-      <MainPage />
+      <MainPage userName={userName}/>
     )
   } else{
   return (
@@ -61,6 +69,7 @@ function SignIn() {
           onChange={(e) => setEmail(e.target.value)}
           />
         <Input
+          type={"password"}
           placeholder={"Enter Password"}
          value={password}
         onChange={(e)=> setPassword(e.target.value)}

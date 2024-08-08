@@ -20,6 +20,7 @@ function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [status, setStatus]= useState("");
+  const [userName, setUserName]=useState("");
 
   function signUp() {
     axios.post(signUpUrl, {
@@ -29,6 +30,7 @@ function SignUp() {
     .then((response)=>{
       setStatus("SignUp success");
       console.log(response.data);
+      setUserName(response.data.email);
     }
 
     )
@@ -39,7 +41,7 @@ function SignUp() {
   }
   if(status==="SignUp success"){
     return (
-      <MainPage />
+      <MainPage userName={userName} />
     )
   } else{
   
@@ -66,6 +68,7 @@ function SignUp() {
           onChange={(e) => setEmail(e.target.value)}
         />
         <Input
+        type={"password"}
           placeholder={"Enter Password"}
           value={password}
           onChange={(e) => setPassword(e.target.value)}

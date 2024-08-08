@@ -14,30 +14,43 @@ function Note(props) {
 
   const createNotesUrl = "http://localhost:8000/api/notes/createnotes";
 
-  const handleSave = () => {
+ 
    
     // if (!noteText.length || noteText.split(" ").length < 2 )
     //   toast.error("Notes text should atleast contain 2 words!");
 
-    axios.post(createNotesUrl, {
-      text: noteText
-    })
+    const handleSave = () => {
+      const token = localStorage.getItem('token'); // Retrieve the token from localStorage
+  
+      axios.post(createNotesUrl, {
+          text: noteText
+      }, {
+          headers: {
+              'Authorization': ` ${token}`,
+              'Content-Type': 'application/json',
+          }
+      })
       .then((res) => {
-        const data = res.data; 
-        console.log(res.data);
-        if (data?.success === 200) {
-          toast.success("Notes added successfully!");
-        } else {
-          toast.error(data?.message);
-        }
+          const data = res.data; 
+          console.log(res.data);
+          if (data?.success === 200) {
+              toast.success("Notes added successfully!");
+          } else {
+              toast.error(data?.message);
+          }
       })
       .catch((err) => {
-        console.log(err);
-        toast.error("Notes creation failed!");
+          console.log(err);
+          toast.error("Notes creation failed!");
       });
+  
       setCallGet(true);
       setCurrentText(noteText);
+  
+      console.log("handle save call");
   }
+  
+ 
 
   return (
     <article className={styles.container} style={{ backgroundColor: color }}>

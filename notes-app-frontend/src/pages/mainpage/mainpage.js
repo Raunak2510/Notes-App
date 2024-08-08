@@ -10,11 +10,29 @@ import styles from "./mainpage.module.scss";
 
 function MainPage() {
   const notes = useNotes();
+//  cons
   const [createNewNotes, setCreateNewNotes] = useState(false);
   const [callGet, setCallGet] = useState(false);
   const [currentText, setCurrentText] = useState("");
+  //  const [userName, setUserName] = useState("");
+     let userName ="user";
+    // console.log("notes"+useNotes());
+   
+    if (notes.length > 0 && notes[0].email) {
+      userName=notes[0].email;
+    }
+    
+    
+  let newUserName="";
+  for(let i=0; i<userName.length; i++){
+    if(userName[i]==='@'){
+      break;
+    } else{
+       newUserName+=userName[i];
+    }
+  }
 
-  console.log(notes);
+ 
 
   return (
     <section className={styles.section1}>
@@ -27,7 +45,7 @@ function MainPage() {
           <h2>
             Hello,
             <span className={styles.span}>
-              Raunak! {<FaRegHandSpock className={styles.svg} />}
+              {newUserName} {<FaRegHandSpock className={styles.svg} />}
             </span>
           </h2>
           <h7>All your notes here, in one place</h7>
